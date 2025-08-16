@@ -16,4 +16,8 @@ clean:
 init:
 	nix-init package.nix
 
+pr:
+	rm -rf $(CLEAN)
+	bash -O extglob -c 'rm -rf !(package.nix)'
+
 .PHONY: all clean
